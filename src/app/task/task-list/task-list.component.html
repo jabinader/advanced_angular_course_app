@@ -1,0 +1,30 @@
+<div class="container">
+	<div>
+		<div>Normal Signal Section</div>
+		<div>{{ normalSignal() }}
+			<button mat-button (click)="updateNormalSignal()">Update Normal Signal</button>
+		</div>
+	</div>
+	<div>
+		<div>Computed Signal Section</div>
+		<div>{{ computedSignal() }}</div>
+		<button mat-button (click)="updateSignalForComputed()">Update Computed Signal</button>
+		<button mat-button (click)="updateUntrackedSignal()">Update Untracked Signal</button>
+	</div>
+	<div>
+		<div>Effect Signal Section</div>
+		<!-- <div>{{ effect }}</div> -->
+		<button mat-button (click)="updateSignalForEffect()">Update Computed Signal</button>
+	</div>
+	<div>
+		<div>Signal Section for equality</div>
+		<div>{{ signalToTestEquality().name }}  {{ signalToTestEquality().id }}</div>
+		<button mat-button (click)="updateSignalToTestEquality()">Update Computed Signal</button>
+	</div>
+	<div>
+		<div>Linked Signal Section</div>
+		
+		<button mat-button (click)="logSelectedSignal()">Log selected option</button>
+		<button mat-button (click)="updatePaymentOptions()">Update Payment method</button>
+	</div>
+</div>
