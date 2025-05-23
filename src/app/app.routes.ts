@@ -7,6 +7,7 @@ export const routes: Routes = [
 		children: [
 			{ path: '', redirectTo: 'tasks', pathMatch: 'full' },
 			{ path: 'tasks', loadComponent: () => import('./task/task-list/task-list.component').then(m => m.TaskListComponent) },
+			{ path: 'content-projection', loadComponent: () => import('./content-projection/content-projection.component').then(m => m.ContentProjectionComponent) },
 		]
 	 },
 ];
