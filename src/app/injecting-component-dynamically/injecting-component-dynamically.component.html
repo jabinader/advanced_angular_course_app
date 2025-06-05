@@ -1,0 +1,11 @@
+<div>
+	<div>
+		<p>Injecting Component using ngComponentOutlet</p> <button mat-button (click)="changeUserType()">Change User Type</button>
+		<ng-container *ngComponentOutlet="injectComponent()"></ng-container>
+	</div>
+	<hr>
+	<div>
+		<p>Injecting Component using ViewContainerRef</p>
+		<button mat-button (click)="injectComponentUsingViewContainerRef()">Inject Component</button>
+	</div>
+</div>

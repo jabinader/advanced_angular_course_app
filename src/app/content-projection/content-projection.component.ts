@@ -1,15 +1,18 @@
-import { Component, signal, viewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, signal, viewChild, ViewChildren, viewChildren } from '@angular/core';
 import { CardItemComponent } from './card-item/card-item.component';
 import { CardItemTitleComponent } from './card-item-title/card-item-title.component';
+import { CardItemTitleIconComponent } from "./card-item-title-icon/card-item-title-icon.component";
 
 @Component({
   selector: 'app-content-projection',
-  imports: [CardItemComponent, CardItemTitleComponent],
+  imports: [CardItemComponent, CardItemTitleComponent, CardItemTitleIconComponent],
   templateUrl: './content-projection.component.html',
   styleUrl: './content-projection.component.sass'
 })
 export class ContentProjectionComponent {
-  cardItems = viewChildren(CardItemComponent);
+  cardItems = viewChildren(CardItemComponent, { read: ElementRef });
+  @ViewChildren(CardItemComponent) cardItemsDecorator = QueryList<CardItemComponent>;
+  button = viewChild<ElementRef<HTMLButtonElement>>('button');
   items = signal([
     { title: 'Item 1', description: 'Description 1' },
     { title: 'Item 2', description: 'Description 2' },
@@ -21,6 +24,8 @@ export class ContentProjectionComponent {
   ]);
 
   ngAfterViewInit() {
-    // console.log(this.cardItems());
+    console.log(this.cardItems());
+    // console.log(this.button());
+    // console.log(this.cardItemsDecorator);
   }
 }

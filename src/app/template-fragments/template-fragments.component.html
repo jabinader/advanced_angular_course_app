@@ -1,0 +1,14 @@
+<div>
+	<ng-template #myTemplate let-templateName="name">
+		<div>this is a template {{ templateName }}</div>
+	</ng-template>
+	<div>
+		<p>Render template fragments using ng template outlet</p>
+		<ng-container [ngTemplateOutlet]="myTemplate" [ngTemplateOutletContext]=" { name: 'test'}"></ng-container>
+	</div>
+	<hr>
+	<div>
+		<p>Render template fragments using view container ref</p>
+		<button mat-button (click)="renderTemplate()">Render Template</button>
+	</div>
+</div>

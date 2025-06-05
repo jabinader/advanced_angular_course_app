@@ -1,8 +1,11 @@
 <div class="container">
+	<button #button mat-button>This is a button</button>
 	@for (item of items(); track $index) {
 		<app-card-item [title]="item.title">
 			<!-- <h3 ngProjectAs="card-item-title">{{ item.title }}</h3> -->
-			<app-card-item-title></app-card-item-title>
+			<app-card-item-title>
+				<app-card-item-title-icon></app-card-item-title-icon>
+			</app-card-item-title>
 			<div slot="card-item-description">{{ item.description }}</div>
 			<div>This is a div</div>
 			<div>This is a div1</div>
