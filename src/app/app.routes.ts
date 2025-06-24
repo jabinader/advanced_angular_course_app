@@ -10,6 +10,8 @@ export const routes: Routes = [
 			{ path: 'content-projection', loadComponent: () => import('./content-projection/content-projection.component').then(m => m.ContentProjectionComponent), data: { preload: true } },
 			{ path: 'dynamic-component-injection', loadComponent: () => import('./injecting-component-dynamically/injecting-component-dynamically.component').then(m => m.InjectingComponentDynamicallyComponent), data: { preload: true } },
 			{ path: 'template-fragments', loadComponent: () => import('./template-fragments/template-fragments.component').then(m => m.TemplateFragmentsComponent), data: { preload: true } },
+			{ path: 'change-detection', loadComponent: () => import('./change-detection/change-detection.component').then(m => m.ChangeDetectionComponent) },
+			{ path: 'control-value-accessor', loadComponent: () => import('./control-value-accessor/control-value-accessor.component').then(m => m.ControlValueAccessorComponent) },
 		]
 	 },
 ];
