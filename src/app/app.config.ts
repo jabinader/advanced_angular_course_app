@@ -3,7 +3,11 @@ import { PreloadAllModules, provideRouter, withPreloading } from '@angular/route
 
 import { routes } from './app.routes';
 import { CustomPreloadingService } from './shared/services/custom-preloading.service';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes, withPreloading(CustomPreloadingService))],
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes, withPreloading(CustomPreloadingService)),
+    provideHttpClient()
+  ],
 };
