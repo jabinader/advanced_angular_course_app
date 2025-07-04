@@ -12,6 +12,7 @@ export const routes: Routes = [
 			{ path: 'template-fragments', loadComponent: () => import('./template-fragments/template-fragments.component').then(m => m.TemplateFragmentsComponent), data: { preload: true } },
 			{ path: 'change-detection', loadComponent: () => import('./change-detection/change-detection.component').then(m => m.ChangeDetectionComponent) },
 			{ path: 'control-value-accessor', loadComponent: () => import('./control-value-accessor/control-value-accessor.component').then(m => m.ControlValueAccessorComponent) },
+			{ path: 'api-testing', loadComponent: () => import('./api-testing/api-testing.component').then(m => m.ApiTestingComponent) },
 		]
 	 },
 ];
